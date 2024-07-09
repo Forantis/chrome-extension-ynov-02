@@ -5,3 +5,20 @@ body{
     flex-direction: column;
     align-items: center;
 }
+
+#bookmarks-list{
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.bookmark{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
