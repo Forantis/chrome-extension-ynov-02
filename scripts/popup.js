@@ -20,15 +20,29 @@ initStorage();
 //const data = [{name: 'cat video', href: 'https://www.youtube.com/watch?v=J---aiyznGQ'}, 
 //   {name: 'dog video', href: 'https://www.youtube.com/watch?v=J---aiyznGQ'}];
 
+function deleteBookmark(index){
+    return function(){
+        storageCache.splice(index, 1);
+        chrome.storage.sync.set({bookmarks: storageCache});
+        const ul = document.querySelector("#bookmarks-list");
+        ul.innerHTML = "";
+        loadBookmarks();
+    }
+}
+
 function loadBookmarks(){
 if (storageCache.length > 0 && "content" in document.createElement("template")){
     const ul = document.querySelector("#bookmarks-list");
     const template = document.querySelector("#bookmark-template");
+    let i = 0;
 
     storageCache.forEach(element => {
         const newListItem = template.content.cloneNode(true);
         newListItem.querySelector('li > a').textContent = element.name;
         newListItem.querySelector('li > a').href = element.href;
+        newListItem.querySelector('li > button').dataset.index = i;
+        newListItem.querySelector('li > button').addEventListener('click', deleteBookmark(i));
+        i++;
         ul.appendChild(newListItem);
     });
 }};
