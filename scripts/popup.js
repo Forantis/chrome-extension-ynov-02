@@ -15,10 +15,12 @@ async function initStorage() {
 }
 
 initStorage();
+loadBookmarks();
 
-const data = [{name: 'cat video', href: 'https://www.youtube.com/watch?v=J---aiyznGQ'}, 
-    {name: 'dog video', href: 'https://www.youtube.com/watch?v=J---aiyznGQ'}];
+//const data = [{name: 'cat video', href: 'https://www.youtube.com/watch?v=J---aiyznGQ'}, 
+//   {name: 'dog video', href: 'https://www.youtube.com/watch?v=J---aiyznGQ'}];
 
+function loadBookmarks(){
 if (storageCache.length > 0 && "content" in document.createElement("template")){
     const ul = document.querySelector("#bookmarks-list");
     const template = document.querySelector("#bookmark-template");
@@ -29,7 +31,7 @@ if (storageCache.length > 0 && "content" in document.createElement("template")){
         newListItem.querySelector('li > a').href = element.href;
         ul.appendChild(newListItem);
     });
-}
+}};
 
 document.querySelector(".form").addEventListener("submit", function(event){
     event.preventDefault();
@@ -42,4 +44,9 @@ document.querySelector(".form").addEventListener("submit", function(event){
         storageCache.push(newBookmark);
         console.log(storageCache);
         chrome.storage.sync.set({bookmarks: storageCache});
-}});
+    }
+
+    const ul = document.querySelector("#bookmarks-list");
+    ul.innerHTML = "";
+    loadBookmarks();
+});
