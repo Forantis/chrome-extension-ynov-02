@@ -1,11 +1,29 @@
+const storageCache = [];
+// Asynchronously retrieve data from storage.sync, then cache it.
+const initStorageCache = chrome.storage.sync.get().then((items) => {
+  // Copy the data retrieved from storage into storageCache.
+  Object.assign(storageCache, items);
+});
+
+// init storageCache
+async function initStorage() {
+    try{
+        await initStorageCache;
+    } catch (error){
+        console.error(error);
+    }
+}
+
+initStorage();
+
 const data = [{name: 'cat video', href: 'https://www.youtube.com/watch?v=J---aiyznGQ'}, 
     {name: 'dog video', href: 'https://www.youtube.com/watch?v=J---aiyznGQ'}];
 
-if (data.length > 0 && "content" in document.createElement("template")){
+if (storageCache.length > 0 && "content" in document.createElement("template")){
     const ul = document.querySelector("#bookmarks-list");
     const template = document.querySelector("#bookmark-template");
 
-    data.forEach(element => {
+    storageCache.forEach(element => {
         const newListItem = template.content.cloneNode(true);
         newListItem.querySelector('li > a').textContent = element.name;
         newListItem.querySelector('li > a').href = element.href;
@@ -16,14 +34,12 @@ if (data.length > 0 && "content" in document.createElement("template")){
 document.querySelector(".form").addEventListener("submit", function(event){
     event.preventDefault();
     const name = document.querySelector("#bookmark-name").value;
-    const href = document.querySelector("#bookmark-href").value;
+    const href = document.querySelector("#bookmark-link").value;
 
-    alert(`Name: ${name}, Href: ${href}`);
+    if(name && href){
+        const newBookmark = {"name": name, "href": href};
+        storageCache.push(newBookmark);
+        console.log(storageCache);
+        //chrome.storage.sync.set(storageCache);
+    }
 });
-
-async function getStorageInfo(){
-    const storageInfo = await navigator.storage.estimate();
-    console.log(storageInfo);
-}
-
-getStorageInfo();
