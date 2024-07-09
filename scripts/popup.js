@@ -2,7 +2,7 @@ const storageCache = [];
 // Asynchronously retrieve data from storage.sync, then cache it.
 const initStorageCache = chrome.storage.sync.get().then((items) => {
   // Copy the data retrieved from storage into storageCache.
-  Object.assign(storageCache, items);
+  Object.assign(storageCache, items.bookmarks || []);
 });
 
 // init storageCache
@@ -37,9 +37,9 @@ document.querySelector(".form").addEventListener("submit", function(event){
     const href = document.querySelector("#bookmark-link").value;
 
     if(name && href){
+        initStorage();
         const newBookmark = {"name": name, "href": href};
         storageCache.push(newBookmark);
         console.log(storageCache);
-        //chrome.storage.sync.set(storageCache);
-    }
-});
+        chrome.storage.sync.set({bookmarks: storageCache});
+}});
