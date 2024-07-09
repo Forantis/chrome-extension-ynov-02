@@ -15,7 +15,7 @@ async function initStorage() {
 }
 
 initStorage();
-loadBookmarks();
+
 
 //const data = [{name: 'cat video', href: 'https://www.youtube.com/watch?v=J---aiyznGQ'}, 
 //   {name: 'dog video', href: 'https://www.youtube.com/watch?v=J---aiyznGQ'}];
@@ -50,3 +50,21 @@ document.querySelector(".form").addEventListener("submit", function(event){
     ul.innerHTML = "";
     loadBookmarks();
 });
+
+document.querySelector('#bookmark-name').addEventListener('input', function(){
+    if(document.querySelector('#bookmark-name').value === "" && document.querySelector('#bookmark-link').value === ""){
+        document.querySelector('#bookmark-button').value = "reload bookmarks";
+    }
+    else{
+        document.querySelector('#bookmark-button').value = "add bookmark";
+    }});
+
+document.querySelector('#bookmark-link').addEventListener('input', function(){
+    if(document.querySelector('#bookmark-name').value === "" && document.querySelector('#bookmark-link').value === ""){
+        document.querySelector('#bookmark-button').value = "reload bookmarks";
+    }
+    else{
+        document.querySelector('#bookmark-button').value = "add bookmark";
+    }});
+
+loadBookmarks();
