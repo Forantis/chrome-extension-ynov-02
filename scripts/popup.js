@@ -8,8 +8,8 @@ const data = [{name: 'cat video', href: 'https://www.youtube.com/watch?v=J---aiy
 
         data.forEach(element => {
             const newListItem = template.content.cloneNode(true);
-            newListItem.textContent = element.name;
-            newListItem.href = element.href;
+            newListItem.querySelector('li > a').textContent = element.name;
+            newListItem.querySelector('li > a').href = element.href;
             ul.appendChild(newListItem);
         });
     }
