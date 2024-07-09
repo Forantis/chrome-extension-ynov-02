@@ -1,3 +1,5 @@
+
+
 body{
     width: 300px;
     height: 400px;
@@ -6,6 +8,11 @@ body{
     align-items: center;
     background-color: rgba(239,254,255,255);
     margin: 0;
+    border-radius: 25px;
+}
+
+h1{
+    margin: 13px 0 8px 0;
 }
 
 #bookmarks-list{
@@ -36,8 +43,7 @@ body{
     display: flex;
     flex-direction: row;
     width: 95%;
-    gap: 2%;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -46,16 +52,25 @@ form{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 2%;
+    gap: 5px;
 }
 
 #bookmark-name, #bookmark-link{
-    width: 45%;
+    width: 48%;
     height: 30px;
     border-radius: 15px;
     border: none;
     color: rgba(112,158,158,255);
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
+#bookmark-name::placeholder, #bookmark-link::placeholder{
+    color: rgba(112,158,158,255);
+    font-weight: normal;
 }
 
 #bookmark-button{
@@ -63,6 +78,17 @@ form{
     border-radius: 15px;
     height: 30px;
     border: none;
+    background-color: rgba(112,219,227,255);
+    color: rgba(233,232,237,255);
+    font-weight: bold;
+    margin-bottom: 13px;
+    padding: 0;
+}
+
+#bookmark-button:hover{
+    background-color: rgba(238,253,255,255);
+    color: rgba(9,43,55,255);
+    cursor: pointer;
 }
 
 header{
