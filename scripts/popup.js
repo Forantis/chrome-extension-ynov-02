@@ -20,3 +20,10 @@ document.querySelector(".form").addEventListener("submit", function(event){
 
     alert(`Name: ${name}, Href: ${href}`);
 });
+
+async function getStorageInfo(){
+    const storageInfo = await navigator.storage.estimate();
+    console.log(storageInfo);
+}
+
+getStorageInfo();
