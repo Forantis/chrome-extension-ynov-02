@@ -7,13 +7,17 @@
     <link rel="stylesheet" href="./popup.css">
 </head>
 <body>
-    <h1> Video Bookmarker </h1>
-    <div class="container">
+    <header>
+        <h1> Video Bookmarker </h1>
         <form class="form">
-            <input type="text" id="bookmark-name" placeholder="Bookmark Name">
-            <input type="text" id="bookmark-link" placeholder="Bookmark Link">
+            <div class="container"></div>
+            <div id="input-container">
+                <input type="text" id="bookmark-name" placeholder="Bookmark Name">
+                <input type="text" id="bookmark-link" placeholder="Bookmark Link">
+            </div>
             <input id="bookmark-button" type="submit" value="Bookmark">
         </form>
+    </header>
         <div class="bookmarks">
             <ul id="bookmarks-list">
                 <!-- Bookmarks will be added here -->

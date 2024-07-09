@@ -4,15 +4,19 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: rgba(239,254,255,255);
+    margin: 0;
 }
 
 #bookmarks-list{
     width: 100%;
     height: 100%;
-    overflow-y: auto;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     list-style: none;
+    padding: 0;
+    
 }
 
 .bookmark{
@@ -21,5 +25,52 @@ body{
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    border-bottom: 1px solid #ccc;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+    text-transform: uppercase;
+}
+
+#input-container{
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    gap: 2%;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2%;
+}
+
+#bookmark-name, #bookmark-link{
+    width: 45%;
+    height: 30px;
+    border-radius: 15px;
+    border: none;
+    color: rgba(112,158,158,255);
+
+}
+
+#bookmark-button{
+    width: 95%;
+    border-radius: 15px;
+    height: 30px;
+    border: none;
+}
+
+header{
+    background-color: rgba(17,67,74,255);
+    width: 100%;
+    color: rgba(233,232,237,255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
