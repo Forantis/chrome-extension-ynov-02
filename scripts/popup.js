@@ -30,6 +30,7 @@ function deleteBookmark(index){
     }
 }
 
+// load bookmarks from storage
 function loadBookmarks(){
 if (storageCache.length > 0 && "content" in document.createElement("template")){
     const ul = document.querySelector("#bookmarks-list");
@@ -47,6 +48,7 @@ if (storageCache.length > 0 && "content" in document.createElement("template")){
     });
 }};
 
+// add bookmark functionality
 document.querySelector(".form").addEventListener("submit", function(event){
     event.preventDefault();
     const name = document.querySelector("#bookmark-name").value;
