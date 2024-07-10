@@ -17,8 +17,8 @@ async function initStorage() {
 initStorage();
 
 
-//const data = [{name: 'cat video', href: 'https://www.youtube.com/watch?v=J---aiyznGQ'}, 
-//   {name: 'dog video', href: 'https://www.youtube.com/watch?v=J---aiyznGQ'}];
+/* const data = [{name: 'cat video', href: 'https://www.youtube.com/watch?v=J---aiyznGQ'}, 
+   {name: 'dog video', href: 'https://www.youtube.com/watch?v=J---aiyznGQ'}]; */
 
 function deleteBookmark(index){
     return function(){
