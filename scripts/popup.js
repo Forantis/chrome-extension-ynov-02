@@ -14,12 +14,7 @@ async function initStorage() {
     }
 }
 
-
-
-
-/* const data = [{name: 'cat video', href: 'https://www.youtube.com/watch?v=J---aiyznGQ'}, 
-   {name: 'dog video', href: 'https://www.youtube.com/watch?v=J---aiyznGQ'}]; */
-
+// delete bookmark functionality called by the delete button on each bookmark
 function deleteBookmark(index){
     return function(){
         storageCache.splice(index, 1);
