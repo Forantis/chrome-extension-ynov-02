@@ -89,3 +89,17 @@ document.addEventListener('DOMContentLoaded', function(){
     initStorage();
     loadBookmarks();
 });
+
+function getTitle() {
+    console.log(document.querySelector("h1 > yt-formatted-string").textContent);
+    return document.querySelector("h1 > yt-formatted-string").textContent;
+  }
+  
+  chrome.action.onClicked.addListener((tab) => {
+    if (tab.url.includes('https://www.youtube.com/')) {
+      chrome.scripting.executeScript({
+        target: { tabId: tab.id },
+        func: getTitle
+      });
+    }
+  });
