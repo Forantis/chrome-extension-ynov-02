@@ -14,7 +14,7 @@ async function initStorage() {
     }
 }
 
-initStorage();
+
 
 
 /* const data = [{name: 'cat video', href: 'https://www.youtube.com/watch?v=J---aiyznGQ'}, 
@@ -84,5 +84,8 @@ document.querySelector('#bookmark-link').addEventListener('input', function(){
         document.querySelector('#bookmark-button').value = "add bookmark";
     }});
 
-// load bookmarks on popup load
-document.addEventListener('DOMContentLoaded', loadBookmarks);
+// get bookmarks from local storage and load them on popup load
+document.addEventListener('DOMContentLoaded', function(){
+    initStorage();
+    loadBookmarks();
+});
