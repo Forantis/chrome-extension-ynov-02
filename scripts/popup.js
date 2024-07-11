@@ -84,4 +84,5 @@ document.querySelector('#bookmark-link').addEventListener('input', function(){
         document.querySelector('#bookmark-button').value = "add bookmark";
     }});
 
-loadBookmarks();
+// load bookmarks on popup load
+document.addEventListener('DOMContentLoaded', loadBookmarks);
