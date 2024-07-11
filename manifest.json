@@ -2,10 +2,11 @@
     "manifest_version": 3,
     "name": "Video Bookmarker",
     "description": "Bookmark your favorite videos from youtube",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "action": {
       "default_popup": "views/popup.html",
-      "default_icon": "images/icon.png"
+      "default_icon": "images/icon.png",
+      "default_title": "save video bookmark"
     },
   "background": {
     "service_worker": "scripts/popup.js"
