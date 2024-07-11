@@ -102,8 +102,20 @@ header{
 }
 
 li{
-    width: 100%;
+    width: 250px;
     display: flex;
     flex-direction: row;
-    justify-content:space-between;
+    justify-content:space-around;
+}
+
+li > button{
+    width: 15%;
+    border-radius: 15px;
+    height: 30px;
+    border: none;
+    background-color: rgba(112,219,227,255);
+    color: rgba(233,232,237,255);
+    font-weight: bold;
+    margin-bottom: 13px;
+    padding: 0;
 }
