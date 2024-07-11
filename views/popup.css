@@ -63,6 +63,7 @@ body {
 #bookmarks-list {
     display: flex;
     flex-direction: column;
+    gap: 5px;
     height: 100%;
     list-style: none;
     overflow-x: hidden;
@@ -102,11 +103,11 @@ h1 {
 
 li {
     align-items: center;
-    background-color: #C9DCE6;
+    background-color: #E3F1F3;
     border-radius: 5px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     width: 250px;
 }
 
