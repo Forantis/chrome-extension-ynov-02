@@ -1,21 +1,19 @@
-
-
-body{
+body {
     width: 300px;
     height: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(239,254,255,255);
+    background-color: rgba(239, 254, 255, 255);
     margin: 0;
     border-radius: 25px;
 }
 
-h1{
+h1 {
     margin: 13px 0 8px 0;
 }
 
-#bookmarks-list{
+#bookmarks-list {
     width: 100%;
     height: 100%;
     overflow-x: hidden;
@@ -23,10 +21,9 @@ h1{
     flex-direction: column;
     list-style: none;
     padding: 0;
-    
 }
 
-.bookmark{
+.bookmark {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -39,7 +36,7 @@ h1{
     text-transform: uppercase;
 }
 
-#input-container{
+#input-container {
     display: flex;
     flex-direction: row;
     width: 95%;
@@ -47,7 +44,7 @@ h1{
     align-items: center;
 }
 
-form{
+form {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,12 +52,13 @@ form{
     gap: 5px;
 }
 
-#bookmark-name, #bookmark-link{
+#bookmark-name,
+#bookmark-link {
     width: 48%;
     height: 30px;
     border-radius: 15px;
     border: none;
-    color: rgba(112,158,158,255);
+    color: rgba(112, 158, 158, 255);
     font-weight: bold;
     display: flex;
     justify-content: center;
@@ -68,53 +66,59 @@ form{
     text-align: center;
 }
 
-#bookmark-name::placeholder, #bookmark-link::placeholder{
-    color: rgba(112,158,158,255);
+#bookmark-name::placeholder,
+#bookmark-link::placeholder {
+    color: rgba(112, 158, 158, 255);
     font-weight: normal;
 }
 
-#bookmark-button{
+#bookmark-button {
     width: 95%;
     border-radius: 15px;
     height: 30px;
     border: none;
-    background-color: rgba(112,219,227,255);
-    color: rgba(233,232,237,255);
+    background-color: rgba(112, 219, 227, 255);
+    color: rgba(233, 232, 237, 255);
     font-weight: bold;
     margin-bottom: 13px;
     padding: 0;
 }
 
-#bookmark-button:hover{
-    background-color: rgba(238,253,255,255);
-    color: rgba(9,43,55,255);
+#bookmark-button:hover {
+    background-color: rgba(238, 253, 255, 255);
+    color: rgba(9, 43, 55, 255);
     cursor: pointer;
 }
 
-header{
-    background-color: rgba(17,67,74,255);
+header {
+    background-color: rgba(17, 67, 74, 255);
     width: 100%;
-    color: rgba(233,232,237,255);
+    color: rgba(233, 232, 237, 255);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-li{
+li {
     width: 250px;
     display: flex;
     flex-direction: row;
-    justify-content:space-around;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #c9dce6;
+    border-radius: 5px;
 }
 
-li > button{
+li > button {
     width: 15%;
+    align-items: center;
+    justify-content: center;
     border-radius: 15px;
     height: 30px;
     border: none;
-    background-color: rgba(112,219,227,255);
-    color: rgba(233,232,237,255);
+    background-color: #ff8d3e;
+    color: rgba(233, 232, 237, 255);
     font-weight: bold;
     margin-bottom: 13px;
     padding: 0;
