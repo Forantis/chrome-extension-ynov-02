@@ -96,12 +96,12 @@ function getTitle() {
     return document.querySelector("h1 > yt-formatted-string").textContent;
   }
   
-  chrome.action.onClicked.addListener((tab) => {
+    chrome.action.onClicked.addListener((tab) => {
     console.log(tab.url);
-    if (tab.url.includes('https://www.youtube.com/')) {
-      chrome.scripting.executeScript({
+    if (tab.url.includes('youtube')) {
+        chrome.scripting.executeScript({
         target: { tabId: tab.id },
         func: getTitle
-      });
+        });
     }
-  });
+    });
