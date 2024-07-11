@@ -9,7 +9,7 @@
       "default_title": "save video bookmark"
     },
   "background": {
-    "service_worker": "scripts/popup.js"
+    "service_worker": "scripts/background.js"
   },
   "permissions": [ 
     "storage",
