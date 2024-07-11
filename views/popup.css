@@ -108,6 +108,7 @@ li {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding: 5px;
     width: 250px;
 }
 
@@ -120,7 +121,6 @@ li > button {
     font-weight: bold;
     height: 30px;
     justify-content: center;
-    margin-bottom: 13px;
     padding: 0;
     width: 15%;
 }
