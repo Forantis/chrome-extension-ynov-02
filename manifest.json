@@ -13,5 +13,9 @@
       "js": [ "scripts/popup.js" ]
     }
   ],
-  "permissions": [ "storage" ]
+  "permissions": [ 
+    "storage",
+    "activeTab",
+    "scripting" 
+  ]
   }
