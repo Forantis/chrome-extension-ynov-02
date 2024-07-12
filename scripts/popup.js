@@ -62,7 +62,7 @@ document.querySelector(".form").addEventListener("submit", function(event){
     loadBookmarks();
 });
 
-// handle the state of the add / reload bookmark button
+// handle the state of the add or reload bookmark button
 document.querySelector('#bookmark-name').addEventListener('input', function(){
     if(document.querySelector('#bookmark-name').value === "" && document.querySelector('#bookmark-link').value === ""){
         document.querySelector('#bookmark-button').value = "reload bookmarks";
